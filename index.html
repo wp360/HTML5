@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery-Plugin</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="accordion">
+        <h3>Item 1</h3>
+        <div>
+            <p>文章段落一</p>
+            <ul>
+                <li>第1节</li>
+                <li>第2节</li>
+                <li>第3节</li>
+            </ul>
+        </div>
+        <h3>Item 2</h3>
+        <div>
+            <p>文章段落二</p>
+            <ul>
+                <li>第1节</li>
+                <li>第2节</li>
+                <li>第3节</li>
+            </ul>
+        </div>
+        <h3>Item 3</h3>
+        <div>
+            <p>文章段落三</p>
+            <ul>
+                <li>第1节</li>
+                <li>第2节</li>
+                <li>第3节</li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+    <script src="accordion.js"></script>
+    <script>
+        $('#accordion').accordion({
+            distinct: true
+        });
+    </script>
+</body>
+</html>
