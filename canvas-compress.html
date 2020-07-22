@@ -103,19 +103,20 @@
           // callback
           callback && callback(compressImage);
 
-          const _image = new Image();
-          _image.src = compressImage;
-          document.body.appendChild(_image);
+          // const _image = new Image();
+          // _image.src = compressImage;
+          // document.body.appendChild(_image);
 
           canvas.remove(); // 移除 canvas
 
-          console.log('压缩比： ' + image.src.length / _image.src.length);
+          // console.log('压缩比： ' + image.src.length / _image.src.length);
         });
         image.src = base64Image;
-        document.body.appendChild(image);
+        // document.body.appendChild(image);
       }
 
       function uploadImage(compressImage) {
+        // console.log('upload image to server...');
         console.log('upload image to server...', compressImage);
       }
     });
