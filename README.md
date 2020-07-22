@@ -44,6 +44,11 @@
 
 [D3.js 学习之路](https://zhuanlan.zhihu.com/p/38001672)
 
+* 6. Three.js
+
+> Three.js 是一个基于 WebGL 的 Javascript 3D 图形库
+
+
 ## git 远程分支上传
 ```
 git remote add origin https://github.com/wp360/HTML5.git
