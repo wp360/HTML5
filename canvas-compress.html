@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas进阶案例：图片压缩</title>
+</head>
+<body>
+  <input type="file" id="upload">
+  <script>
+    // 文件类型
+    const ACCEPT = ['image/jpg', 'image/jpeg', 'image/png'];
+    // 文件大小
+    const MAXSIZE = 3*1024*1024;
+    const MAXSIZE_STR = '3MB';
+    const upload = document.getElementById('upload');
+    upload.addEventListener('change', function(e) {
+      // console.log(e.target.files);
+      // const file = e.target.files[0];
+      const [file] = e.target.files;
+      if(!file) {
+        return;
+      }
+
+      const {type: fileType, size: fileSize} = file;
+      // 图片类型判断
+      // if(ACCEPT.indexOf(fileType) < 0) {
+      if(!ACCEPT.includes(fileType)) {
+        // alert('不支持[' + fileType + ']文件类型！');
+        alert(`不支持[${fileType}]文件类型！`);
+        upload.value = '';
+        return;
+      }
+      // 图片大小判断
+      if(fileSize > MAXSIZE) {
+        alert(`文件超出${MAXSIZE_STR}`);
+        upload.value = '';
+        return;
+      }
+      // 图片压缩
+      // convertImageToBase64(file, compress);
+      convertImageToBase64(file, (base64Image) => compress(base64Image, uploadImage));
+
+      function convertImageToBase64(file, callback) {
+        let reader = new FileReader();
+        reader.addEventListener('load', function(e) {
+          // console.log(e.target.result);
+          const base64Image = e.target.result;
+          callback && callback(base64Image);
+          reader = null;
+        });
+        reader.readAsDataURL(file);
+      }
+
+      function compress(base64Image, callback) {
+        let maxW = 1024;
+        let maxH = 1024;
+        // console.log(base64Image);
+        const image = new Image();
+        image.addEventListener('load', function(e) {
+          let ratio; // 图片压缩比
+          let needCompress = false; // 是否需要压缩
+          console.log(image.naturalWidth, image.naturalHeight);
+
+          // 根据最大宽度判断是否压缩
+          if(maxW < image.naturalWidth) {
+            needCompress = true;
+            ratio = image.naturalWidth / maxW;
+            // console.log(ratio);
+            maxH = image.naturalHeight / ratio;
+            // console.log(maxH);
+          }
+
+          // 根据最大高度判断是否压缩
+          if (maxH < image.naturalHeight) {
+            needCompress = true;
+            ratio = image.naturalHeight / maxH;
+            maxW = image.naturalWidth / ratio;
+          }
+
+          // 无需压缩
+          if (!needCompress) {
+            maxW = image.naturalWidth;
+            maxH = image.naturalHeight;
+          }
+
+          // canvas绘图
+          const canvas = document.createElement('canvas');
+          canvas.setAttribute('id', '__compress__');
+          canvas.width = maxW;
+          canvas.height = maxH;
+          canvas.style.visibility = 'hidden'; // visible
+          document.body.append(canvas);
+
+          const ctx = canvas.getContext('2d');
+          // 清空
+          ctx.clearRect(0, 0, maxW, maxH);
+          // 渲染图片
+          ctx.drawImage(image, 0, 0, maxW, maxH);
+          // 输出base64图片
+          const compressImage = canvas.toDataURL('image/jpeg', 0.9); // 压缩图片
+
+          // callback
+          callback && callback(compressImage);
+
+          const _image = new Image();
+          _image.src = compressImage;
+          document.body.appendChild(_image);
+
+          canvas.remove(); // 移除 canvas
+
+          console.log('压缩比： ' + image.src.length / _image.src.length);
+        });
+        image.src = base64Image;
+        document.body.appendChild(image);
+      }
+
+      function uploadImage(compressImage) {
+        console.log('upload image to server...', compressImage);
+      }
+    });
+  </script>
+</body>
+</html>

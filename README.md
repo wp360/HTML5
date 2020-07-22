@@ -48,6 +48,8 @@
 
 > Three.js 是一个基于 WebGL 的 Javascript 3D 图形库
 
+## Canvas进阶案例：图片压缩
+`详见： canvas-compress.html`
 
 ## git 远程分支上传
 ```
