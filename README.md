@@ -13,6 +13,10 @@
 5. 调用绘图API
 ```
 
+* 2. SVG
+
+> SVG 意为可缩放矢量图形（Scalable Vector Graphics）。
+
 ## git 远程分支上传
 ```
 git remote add origin https://github.com/wp360/HTML5.git
