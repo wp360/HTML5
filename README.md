@@ -51,6 +51,26 @@
 ## Canvas进阶案例：图片压缩
 `详见： canvas-compress.html`
 
+## Highcharts
+
+> Highcharts 是一个用纯JavaScript编写的一个图表库， 能够很简单便捷的在web网站或是web应用程序添加有交互性的图表，并且免费提供给个人学习、个人网站和非商业用途使用。Highcharts 系列包含 Highcharts JS，Highstock JS，Highmaps JS 共三款软件，均为纯 JavaScript 编写的 HTML5 图表库。
+
+## AntV
+
+> AntV 是蚂蚁金服全新一代数据可视化解决方案，致力于提供一套简单方便、专业可靠、无限可能的数据可视化最佳实践。
+
+```
+
+*** Antv G2 的绘图流程 ***
+1. 引入 js 库
+2. 编写渲染容器 DOM
+3. 准备渲染数据
+4. 获取渲染 DOM 对象
+5. 初始化 G2 绘图对象（如：G2Plot.Line），配置绘图参数
+6. 调用 render 完成渲染
+
+```
+
 ## git 远程分支上传
 ```
 git remote add origin https://github.com/wp360/HTML5.git
