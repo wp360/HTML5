@@ -98,6 +98,22 @@ graph.render(); // 绘制矢量图
 
 ```
 
+* L7 案例：气泡图
+
+```
+
+*** Antv L7 的绘图流程 ***
+1. 引入 js 库
+2. 编写渲染容器 DOM
+3. 初始化地图对象 L7.Scene
+4. 请求数据
+5. 数据清洗
+6. 初始化绘图对象（如：L7.PointLayer）
+7. 调用 L7.Scene.addLayer 方法绘图
+
+```
+
+
 ## git 远程分支上传
 ```
 git remote add origin https://github.com/wp360/HTML5.git
