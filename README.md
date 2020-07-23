@@ -113,6 +113,25 @@ graph.render(); // 绘制矢量图
 
 ```
 
+## Echarts 基础
+
+* 1. 入门案例：销售柱状图
+```
+
+*** ECharts 的绘图流程 ***
+1. 引入 js 库
+2. 编写渲染容器 DOM，添加 width 和 height 样式属性
+3. 获取渲染 DOM 对象
+4. 初始化 ECharts 对象
+5. 编写 option 参数
+6. 调用 setOption 完成渲染
+
+```
+
+* 2. 自定义主题
+
+[https://www.echartsjs.com/theme-builder/](https://www.echartsjs.com/theme-builder/)
+
 
 ## git 远程分支上传
 ```
