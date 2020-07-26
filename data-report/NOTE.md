@@ -194,3 +194,54 @@ Vue.use(Col)
   </div>
 </template>
 ```
+
+* 5. 公共组件(通用卡片组件)
+> src/components/CommonCard/index.vue
+
+```vue
+<template>
+  <div class="common-card">
+    <div class="title"></div>
+    <div class="value"></div>
+    <div class="chart"></div>
+    <div class="line"></div>
+    <div class="total"></div>
+  </div>
+</template>
+```
+
+* 6. 新建TotalSales组件
+
+* 7. 引入通用卡片组件
+
+* 8. 新建组件（TotalOrders、TodayUsers、TotalUsers）
+
+* 9. 引入对应组件
+
+* 10. 新建mixins
+```js
+// mixins/commonCardMixin.js
+import CommonCard from '@/components/CommonCard'
+
+export default {
+  components: {
+    CommonCard
+  }
+}
+
+```
+
+* 11. vue中mixins的使用
+```js
+// src/components/TotalSales/index.vue
+import commonCardMixin from '@/mixins/commonCardMixin'
+
+export default {
+  name: 'totalSales',
+  mixins: [commonCardMixin]
+}
+```
+
+* 12. 通用卡片组件样式调整
+
+* 13. 累计销售额组件
