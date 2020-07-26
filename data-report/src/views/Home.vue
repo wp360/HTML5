@@ -1,8 +1,6 @@
 <template>
   <div class="home">
     <top-view></top-view>
-    <h1>首页</h1>
-    <img alt="Vue logo" src="../assets/logo.png">
     <sales-view></sales-view>
     <bottom-view></bottom-view>
     <map-view></map-view>

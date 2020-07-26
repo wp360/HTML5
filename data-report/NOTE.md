@@ -120,3 +120,77 @@ import Echarts from 'echarts'
 Vue.prototype.$echarts = Echarts
 
 ```
+
+* 7. 新建组件（TopView、SalesView、BottomView、MapView）
+
+## 头部组件
+
+* 1. 按需加载Element-UI的Card组件
+```js
+// src/plugins/element.js
+import { Card } from 'element-ui'
+
+Vue.use(Card)
+
+```
+
+* 2. 使用Card组件
+```vue
+<template>
+  <div class="top-view">
+    <el-card shadow="hover">
+      鼠标悬浮时显示
+    </el-card>
+    <el-card shadow="hover">
+      鼠标悬浮时显示
+    </el-card>
+    <el-card shadow="hover">
+      鼠标悬浮时显示
+    </el-card>
+    <el-card shadow="hover">
+      鼠标悬浮时显示
+    </el-card>
+  </div>
+</template>
+```
+
+* 3. 按需加载布局组件
+```js
+import { Card, Row, Col } from 'element-ui'
+
+Vue.use(Card)
+Vue.use(Row)
+Vue.use(Col)
+
+```
+
+* 4. Layout 布局
+```vue
+<template>
+  <div class="top-view">
+    <el-row :gutter="20">
+      <el-col :span="6">
+        <!-- 间距设置 :body-style="{padding: 0}" -->
+        <el-card shadow="hover">
+          鼠标悬浮时显示
+        </el-card>
+      </el-col>
+      <el-col :span="6">
+        <el-card shadow="hover">
+          鼠标悬浮时显示
+        </el-card>
+      </el-col>
+      <el-col :span="6">
+        <el-card shadow="hover">
+          鼠标悬浮时显示
+        </el-card>
+      </el-col>
+      <el-col :span="6">
+        <el-card shadow="hover">
+          鼠标悬浮时显示
+        </el-card>
+      </el-col>
+    </el-row>
+  </div>
+</template>
+```
