@@ -78,3 +78,31 @@ E:\node\visual\data-report\src\router\index.js
     "lint": "vue-cli-service --fix lint"
   },
 ```
+
+* 3. 项目初始化
+
+* 4. 安装element
+`vue add element`
+
+```
+ WARN  There are uncommited changes in the current repository, it's recommended to commit or stash them first.
+? Still proceed? (y/N) y
+
+Installing vue-cli-plugin-element...
+
+✔  Successfully installed plugin: vue-cli-plugin-element
+
+? How do you want to import Element? // 全局引入还是按需引入，选择按需
+  Fully import
+> Import on demand
+
+? Choose the locale you want to load (Use arrow keys) // 选择中文简体
+> zh-CN
+  zh-TW
+  af-ZA
+  ar
+  bg
+  ca
+  cs-CZ
+(Move up and down to reveal more choices)
+```
