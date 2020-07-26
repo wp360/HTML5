@@ -106,3 +106,17 @@ Installing vue-cli-plugin-element...
   cs-CZ
 (Move up and down to reveal more choices)
 ```
+
+* 5. 安装echarts
+`cnpm i -S echarts`
+
+* 6. 引入echarts
+```js
+// main.js
+import Echarts from 'echarts'
+
+// ...
+
+Vue.prototype.$echarts = Echarts
+
+```
