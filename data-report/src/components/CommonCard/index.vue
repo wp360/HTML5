@@ -37,7 +37,6 @@ export default {
 
   .chart {
     height: 50px;
-    background: red;
   }
 
   .line {
@@ -48,5 +47,12 @@ export default {
   .total {
     font-size: 12px;
     color: #666;
+  }
+</style>
+<style lang="scss">
+  .emphasis {
+    margin-left: 5px;
+    color: #333;
+    font-weight: 700;
   }
 </style>
