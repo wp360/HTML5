@@ -354,3 +354,10 @@ export default {
 
 [https://v-charts.js.org/#/](https://v-charts.js.org/#/)
 
+## vue-charts 重构核心指标组件
+
+* 1. 新建全局样式文件
+
+* 2. 使用v-chart组件，添加对应方法
+
+## 销售趋势组件开发
