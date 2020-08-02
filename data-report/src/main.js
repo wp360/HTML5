@@ -4,6 +4,8 @@ import router from './router'
 import './plugins/element.js'
 import Echarts from 'echarts'
 import VueEcharts from 'vue-echarts'
+// 按需引入v-echarts
+import './plugins/vcharts.js'
 
 Vue.config.productionTip = false
 

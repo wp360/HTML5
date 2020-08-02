@@ -305,3 +305,52 @@ export default {
 *3. 参考文档
 
 [https://github.com/ecomfe/vue-echarts](https://github.com/ecomfe/vue-echarts)
+
+## v-charts
+
+* 1. 安装
+`cnpm i v-charts -S`
+
+* 2. 使用
+```js
+// main.js 按需引入
+import './plugins/vcharts.js'
+// 新建vcharts.js
+import Vue from 'vue'
+import VELine from 'v-charts/lib/line.common'
+
+Vue.component('ve-line', VELine)
+```
+
+```vue
+<template>
+  <!-- 销售数据表 -->
+  <ve-line :data="chartData" />
+</template>
+
+<script>
+export default {
+  name: 'salesView',
+  data () {
+    return {
+      chartData: {
+        columns: ['日期', '销售额'],
+        rows: [
+          { 日期: '1月1日', 销售额: 123 },
+          { 日期: '1月2日', 销售额: 1223 },
+          { 日期: '1月3日', 销售额: 2123 },
+          { 日期: '1月4日', 销售额: 4123 },
+          { 日期: '1月5日', 销售额: 3123 },
+          { 日期: '1月6日', 销售额: 7123 }
+        ]
+      }
+    }
+  }
+}
+</script>
+```
+
+*3. 参考文档
+
+[https://v-charts.js.org/#/](https://v-charts.js.org/#/)
+
