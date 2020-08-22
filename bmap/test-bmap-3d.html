@@ -20,13 +20,21 @@
     .anchorBL, .BMap_cpyCtrl {
       display: none;
     }
+
+    .BMap_stdMpZoom {
+      display: block;
+    }
   </style>
   <script type="text/javascript" src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=1jlFXdFPa8z7deLLeNGcgLxbTQagaWRb"></script>
 </head>
 <body>
   <div id="map"></div>
   <script>
-    var map = new BMapGL.Map('map');
+    var map = new BMapGL.Map('map', {
+      minZoom: 8,
+      maxZoom: 12,
+      mapType: BMAP_NORMAL_MAP
+    });
     var point = new BMapGL.Point(121.506379,31.245414); // 116.404, 39.915
     map.centerAndZoom(point, 10);
     map.enableScrollWheelZoom(true);
@@ -38,7 +46,28 @@
     //   map.setHeading(heading);
     // }, 500);
     // 3D地球
-    map.setMapType(BMAP_EARTH_MAP);
+    // map.setMapType(BMAP_EARTH_MAP);
+    // 缩放控件
+    var zoomCtrl = new BMapGL.ZoomControl({
+      anchor: BMAP_ANCHOR_BOTTOM_LEFT,
+      offset: new BMapGL.Size(100, 50) // 位移
+    });
+    map.addControl(zoomCtrl);
+    // 缩放事件监听
+    map.addEventListener('zoomstart', function() {
+      console.log(map.getZoom());
+    });
+
+    map.addEventListener('zoomend', function() {
+      console.log(map.getZoom());
+    });
+
+    // 标尺
+    var scaleCtrl = new BMapGL.ScaleControl({
+      anchor: BMAP_ANCHOR_TOP_LEFT,
+      offset: new BMapGL.Size(10, 10)
+    });
+    map.addControl(scaleCtrl);
   </script>
 </body>
 </html>
